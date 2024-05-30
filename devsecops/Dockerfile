@@ -1,4 +1,5 @@
 FROM openjdk:17
-ADD target/bcdemo.jar bcdemo.jar
+ARG JARFILE=target/*.jar
+ADD ${JARFILE} bcdemo.jar
 EXPOSE 9988
 ENTRYPOINT [ "java","-jar","bcdemo.jar" ]
